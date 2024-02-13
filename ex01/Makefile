@@ -6,11 +6,11 @@
 #    By: gbrunet <gbrunet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/01 14:02:07 by gbrunet           #+#    #+#              #
-#    Updated: 2024/02/01 14:09:07 by gbrunet          ###   ########.fr        #
+#    Updated: 2024/02/13 14:28:40 by gbrunet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = my_awesome_phonebook
+NAME = PhoneBook
 
 CC = c++
 

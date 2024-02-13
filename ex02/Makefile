@@ -6,11 +6,11 @@
 #    By: gbrunet <gbrunet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/01 14:02:07 by gbrunet           #+#    #+#              #
-#    Updated: 2024/02/01 14:09:07 by gbrunet          ###   ########.fr        #
+#    Updated: 2024/02/13 14:31:16 by gbrunet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = global_bank_united
+NAME = GlobalBankstersUnited
 
 CC = c++
 
