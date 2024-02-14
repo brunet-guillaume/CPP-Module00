@@ -6,7 +6,7 @@
 /*   By: gbrunet <gbrunet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:37:26 by gbrunet           #+#    #+#             */
-/*   Updated: 2024/02/01 14:02:03 by gbrunet          ###   ########.fr       */
+/*   Updated: 2024/02/14 10:19:28 by gbrunet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,18 +84,22 @@ void	PhoneBook::search(void) {
 	this->print_phonebook();
 	if (this->contacts.size() == 0)
 		return ;
-	while (index.empty())
-	{
-		std::cout << "index : ";
+	while (index.empty()) {
+		std::cout << "index > ";
 		std::getline(std::cin, index);
-		if (is_valid_number(index))
-		{
+		if (index.empty())
+			continue ;
+		if (is_valid_number(index)) {
 			std::istringstream(index) >> i;
-			if (i > this->contacts.size() - 1 || i < 0)
-				index = "";
+			if (i > this->contacts.size() - 1 || i < 0) {
+				std::cerr << "Invalid index: SEARCH exited" << std::endl;
+				return ;
+			}
 		}
-		else
-			index = "";
+		else {
+			std::cerr << "Invalid index: SEARCH exited" << std::endl;
+			return ;
+		}
 	}
 	std::list<Contact>::iterator it = contacts.begin();
 	advance(it, i);

@@ -6,7 +6,7 @@
 /*   By: gbrunet <gbrunet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:56:16 by gbrunet           #+#    #+#             */
-/*   Updated: 2024/02/01 13:59:58 by gbrunet          ###   ########.fr       */
+/*   Updated: 2024/02/14 10:20:14 by gbrunet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,35 +35,35 @@ void	Contact::print(void){
 }
 
 void	Contact::set_first_name(void) {
-	std::cout << "First name : ";
+	std::cout << "First name > ";
 	std::getline(std::cin, this->first_name);
 	if (this->first_name.empty())
 		this->set_first_name();
 }
 
 void	Contact::set_last_name(void) {
-	std::cout << "Last name : ";
+	std::cout << "Last name > ";
 	std::getline(std::cin, this->last_name);
 	if (this->last_name.empty())
 		this->set_last_name();
 }
 
 void	Contact::set_nickname(void) {
-	std::cout << "Nickname : ";
+	std::cout << "Nickname > ";
 	std::getline(std::cin, this->nickname);
 	if (this->nickname.empty())
 		this->set_nickname();
 }
 
 void	Contact::set_phone_number(void) {
-	std::cout << "Phone number : ";
+	std::cout << "Phone number > ";
 	std::getline(std::cin, this->phone_number);
 	if (this->phone_number.empty())
 		this->set_phone_number();
 }
 
 void	Contact::set_darkest_secret(void) {
-	std::cout << "Darkest secret : ";
+	std::cout << "Darkest secret > ";
 	std::getline(std::cin, this->darkest_secret);
 	if (this->darkest_secret.empty())
 		this->set_darkest_secret();
