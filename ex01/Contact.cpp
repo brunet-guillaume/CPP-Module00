@@ -6,7 +6,7 @@
 /*   By: gbrunet <gbrunet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:56:16 by gbrunet           #+#    #+#             */
-/*   Updated: 2024/02/14 10:20:14 by gbrunet          ###   ########.fr       */
+/*   Updated: 2024/02/15 09:48:10 by gbrunet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 #include <iostream>
 
 Contact::Contact(void) {
-	this->set_first_name();
-	this->set_last_name();
-	this->set_nickname();
-	this->set_phone_number();
-	this->set_darkest_secret();
 	return ;
 }
 
@@ -36,37 +31,57 @@ void	Contact::print(void){
 
 void	Contact::set_first_name(void) {
 	std::cout << "First name > ";
-	std::getline(std::cin, this->first_name);
+	while (std::getline(std::cin, this->first_name)) {
+		if (!this->first_name.empty())
+			break ;
+		std::cout << "First name > ";
+	}
 	if (this->first_name.empty())
-		this->set_first_name();
+		std::cout << std::endl;
 }
 
 void	Contact::set_last_name(void) {
 	std::cout << "Last name > ";
-	std::getline(std::cin, this->last_name);
+	while (std::getline(std::cin, this->last_name)) {
+		if (!this->last_name.empty())
+			break ;
+		std::cout << "Last name > ";
+	}
 	if (this->last_name.empty())
-		this->set_last_name();
+		std::cout << std::endl;
 }
 
 void	Contact::set_nickname(void) {
 	std::cout << "Nickname > ";
-	std::getline(std::cin, this->nickname);
+	while (std::getline(std::cin, this->nickname)) {
+		if (!this->nickname.empty())
+			break ;
+		std::cout << "Nickname > ";
+	}
 	if (this->nickname.empty())
-		this->set_nickname();
+		std::cout << std::endl;
 }
 
 void	Contact::set_phone_number(void) {
 	std::cout << "Phone number > ";
-	std::getline(std::cin, this->phone_number);
+	while (std::getline(std::cin, this->phone_number)) {
+		if (!this->phone_number.empty())
+			break ;
+		std::cout << "Phone number > ";
+	}
 	if (this->phone_number.empty())
-		this->set_phone_number();
+		std::cout << std::endl;
 }
 
 void	Contact::set_darkest_secret(void) {
 	std::cout << "Darkest secret > ";
-	std::getline(std::cin, this->darkest_secret);
+	while (std::getline(std::cin, this->darkest_secret)) {
+		if (!this->darkest_secret.empty())
+			break ;
+		std::cout << "Darkest secret > ";
+	}
 	if (this->darkest_secret.empty())
-		this->set_darkest_secret();
+		std::cout << std::endl;
 }
 
 std::string	Contact::get_first_name(void) {
