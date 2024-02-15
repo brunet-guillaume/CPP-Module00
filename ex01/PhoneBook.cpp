@@ -6,12 +6,11 @@
 /*   By: gbrunet <gbrunet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:37:26 by gbrunet           #+#    #+#             */
-/*   Updated: 2024/02/15 10:06:59 by gbrunet          ###   ########.fr       */
+/*   Updated: 2024/02/15 12:00:33 by gbrunet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <list>
 #include <sstream>
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
