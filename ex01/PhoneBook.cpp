@@ -6,7 +6,7 @@
 /*   By: gbrunet <gbrunet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:37:26 by gbrunet           #+#    #+#             */
-/*   Updated: 2024/02/15 12:00:33 by gbrunet          ###   ########.fr       */
+/*   Updated: 2024/02/16 09:14:17 by gbrunet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,25 +58,41 @@ void	PhoneBook::print_phonebook(void)
 {
 	unsigned long	nb_entries;
 
-	std::cout << "+----------+----------+----------+----------+" << std::endl;
-	std::cout << "|     index|first name| last name|  nickname|" << std::endl;
-	std::cout << "+----------+----------+----------+----------+" << std::endl;
+	std::cout << "┌──────────┬──────────┬──────────┬──────────┐" << std::endl;
+	std::cout << "│\e[1;32m     index\e[0m│\e[1;32mfirst name\e[0m│\e[1;32m last name\e[0m│\e[1;32m  nickname\e[0m│" << std::endl;
+	std::cout << "├──────────┼──────────┼──────────┼──────────┤" << std::endl;
 	if (this->nb_contacts > 7)
 		nb_entries = 8;
 	else
 		nb_entries = this->nb_contacts;
 	for (unsigned int i = 0; i < nb_entries; i++) {
-		std::cout << "|";
+		std::cout << "│";
+		if (i % 2)
+			std::cout << "\e[0;33m";
+		else
+			std::cout << "\e[0;35m";
 		std::cout.width(10);
-		std::cout << i << "|";
+		std::cout << i << "\e[0m│";
+		if (i % 2)
+			std::cout << "\e[0;33m";
+		else
+			std::cout << "\e[0;35m";
 		std::cout.width(10);
-		std::cout << reduce(this->contacts[i].get_first_name()) << "|";
+		std::cout << reduce(this->contacts[i].get_first_name()) << "\e[0m│";
+		if (i % 2)
+			std::cout << "\e[0;33m";
+		else
+			std::cout << "\e[0;35m";
 		std::cout.width(10);
-		std::cout << reduce(this->contacts[i].get_last_name()) << "|";
+		std::cout << reduce(this->contacts[i].get_last_name()) << "\e[0m│";
+		if (i % 2)
+			std::cout << "\e[0;33m";
+		else
+			std::cout << "\e[0;35m";
 		std::cout.width(10);
-		std::cout << reduce(this->contacts[i].get_nickname()) << "|" << std::endl;
+		std::cout << reduce(this->contacts[i].get_nickname()) << "\e[0m│" << std::endl;
 	}
-	std::cout << "+----------+----------+----------+----------+" << std::endl;
+	std::cout << "└──────────┴──────────┴──────────┴──────────┘" << std::endl;
 }
 
 void	PhoneBook::search(void) {
