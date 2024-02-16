@@ -6,7 +6,7 @@
 /*   By: gbrunet <gbrunet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:37:26 by gbrunet           #+#    #+#             */
-/*   Updated: 2024/02/16 09:14:17 by gbrunet          ###   ########.fr       */
+/*   Updated: 2024/02/16 12:08:46 by gbrunet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,13 +108,13 @@ void	PhoneBook::search(void) {
 	this->print_phonebook();
 	if (this->nb_contacts == 0)
 		return ;
-	std::cout << "index > ";
+	std::cout << "\e[1mindex > \e[0m";
 	nb_try = 0;
 	i = 8;
 	while (std::getline(std::cin, index)) {
 		i = 8;
 		if (index.empty()) {
-			std::cout << "index > ";
+			std::cout << "\e[1mindex > \e[0m";
 			continue ;
 		}
 		if (is_valid_number(index)) {
@@ -122,11 +122,11 @@ void	PhoneBook::search(void) {
 			std::istringstream(index) >> i;
 			if (i >= nb_entries || i < 0) {
 				if (nb_try < 5) {
-					std::cerr << "Invalid index: try again" << std::endl;
-					std::cout << "index > ";
+					std::cerr << "\e[0;31mInvalid index: try again\e[0m" << std::endl;
+					std::cout << "\e[1mindex > \e[0m";
 					continue ;
 				}
-				std::cerr << "Invalid index: SEARCH exited" << std::endl;
+				std::cerr << "\e[0;31mInvalid index: SEARCH exited\e[0m" << std::endl;
 				return ;
 			}
 			else
@@ -135,11 +135,11 @@ void	PhoneBook::search(void) {
 		else {
 			nb_try++;
 			if (nb_try < 5) {
-				std::cerr << "Invalid index: try again" << std::endl;
-				std::cout << "index > ";
+				std::cerr << "\e[0;31mInvalid index: try again\e[0m" << std::endl;
+				std::cout << "\e[1mindex > \e[0m";
 				continue ;
 			}
-			std::cerr << "Invalid index: SEARCH exited" << std::endl;
+			std::cerr << "\e[0;31mInvalid index: SEARCH exited\e[0m" << std::endl;
 			return ;
 		}
 	}

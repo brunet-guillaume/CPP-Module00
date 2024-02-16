@@ -6,7 +6,7 @@
 /*   By: gbrunet <gbrunet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 09:46:06 by gbrunet           #+#    #+#             */
-/*   Updated: 2024/02/01 14:00:13 by gbrunet          ###   ########.fr       */
+/*   Updated: 2024/02/16 11:58:22 by gbrunet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class Contact {
 		Contact(void);
 		~Contact(void);
 
+		int			checkPrintable(std::string str);
 		void		print(void);
 		void		set_first_name(void);
 		void		set_last_name(void);
