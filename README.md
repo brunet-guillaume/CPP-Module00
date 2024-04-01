@@ -14,7 +14,7 @@ Project in the fourth circle in 42 school.
 
 ### Compilation
 ```bash
-git clone https://gitlab.com/uotiug42/cpp-module01.git
+git clone https://gitlab.com/uotiug42/cpp-modules/cpp-module00.git
 cd cpp-module01
 # Exercice 00 :
 cd ex00
